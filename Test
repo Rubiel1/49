@@ -1,3 +1,4 @@
+#We wonder if 49x2^n has always an odd digit. This program is made to test it.
 import os, time, copy
 def upto ():
     #lista = [] #We could recover the odd digit or its possition and analyse its statistics.
