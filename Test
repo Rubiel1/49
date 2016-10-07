@@ -1,0 +1,28 @@
+import os, time, copy
+def upto ():
+    #lista = [] #We could recover the odd digit or its possition and analyse its statistics.
+    limit = 0
+    value = 49
+    times = 0
+    while True:
+        try:
+            limit = int(input("How many digits do you want to test? "))       
+        except ValueError:
+            print("Let me see...")
+            continue
+        else:
+            print("This is not a positive integer! try again")
+            break 
+    while True:
+        times = times + 1
+        digits = 0
+        value = 2*value
+        value = value % (10**limit) #We only care about the last "limit" digits.
+        print(value)
+        vcopy = copy.copy(value)
+        while (vcopy != 0) & (vcopy % 2 != 1): #Here we analyse if the digits are even.
+            vcopy = vcopy // 10
+            digits = digits + 1
+        if vcopy == 0:
+            print("The first time all the {0} digits are even is with 49x2^{1} mod 10^{0}={2}".format(limit,times,value))
+            return times
