@@ -4,7 +4,8 @@ def upto ():
     #lista = [] #We could recover the odd digit or its possition and analyse its statistics.
     limit = 0
     value = 49
-    times = 0
+    times = 0 #exponent of 2
+    print("Claim: 49x2^n has always an odd digit. This program ask when does the last k digits are all even.")
     while True:
         try:
             limit = int(input("How many digits do you want to test? "))       
@@ -12,7 +13,7 @@ def upto ():
             print("Let me see...")
             continue
         else:
-            print("This is not a positive integer! try again")
+            print("This is not a positive integer! try again.")
             break 
     while True:
         times = times + 1
@@ -20,7 +21,7 @@ def upto ():
         value = 2*value
         value = value % (10**limit) #We only care about the last "limit" digits.
         print(value)
-        vcopy = copy.copy(value)
+        vcopy = copy.copy(value) #we copy the number to analyse it.
         while (vcopy != 0) & (vcopy % 2 != 1): #Here we analyse if the digits are even.
             vcopy = vcopy // 10
             digits = digits + 1
