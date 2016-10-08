@@ -20,7 +20,7 @@ def upto ():
         digits = 0
         value = 2*value
         value = value % (10**limit) #We only care about the last "limit" digits.
-        print(value)
+        print("Testing 49x2^{0}",times)
         vcopy = copy.copy(value) #we copy the number to analyse it.
         while (vcopy != 0) & (vcopy % 2 != 1): #Here we analyse if the digits are even.
             vcopy = vcopy // 10
